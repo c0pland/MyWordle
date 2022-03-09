@@ -13,6 +13,9 @@
 		C313AF0827D8759F00C91A77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C313AF0627D8759F00C91A77 /* Main.storyboard */; };
 		C313AF0A27D875A100C91A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C313AF0927D875A100C91A77 /* Assets.xcassets */; };
 		C313AF0D27D875A100C91A77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C313AF0B27D875A100C91A77 /* LaunchScreen.storyboard */; };
+		C313AF1727D876C600C91A77 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313AF1627D876C600C91A77 /* KeyboardViewController.swift */; };
+		C313AF1927D876D900C91A77 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313AF1827D876D900C91A77 /* BoardViewController.swift */; };
+		C313AF1B27D8AB7200C91A77 /* KeyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313AF1A27D8AB7200C91A77 /* KeyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		C313AF0927D875A100C91A77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C313AF0C27D875A100C91A77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C313AF0E27D875A100C91A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C313AF1627D876C600C91A77 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		C313AF1827D876D900C91A77 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
+		C313AF1A27D8AB7200C91A77 /* KeyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,34 @@
 		C313AEFF27D8759F00C91A77 /* MyWordle */ = {
 			isa = PBXGroup;
 			children = (
+				C313AF1527D875C700C91A77 /* Other */,
+				C313AF1427D875B400C91A77 /* Core */,
+			);
+			path = MyWordle;
+			sourceTree = "<group>";
+		};
+		C313AF1427D875B400C91A77 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C313AF0427D8759F00C91A77 /* ViewController.swift */,
+				C313AF1627D876C600C91A77 /* KeyboardViewController.swift */,
+				C313AF1827D876D900C91A77 /* BoardViewController.swift */,
+				C313AF1A27D8AB7200C91A77 /* KeyCell.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C313AF1527D875C700C91A77 /* Other */ = {
+			isa = PBXGroup;
+			children = (
 				C313AF0027D8759F00C91A77 /* AppDelegate.swift */,
 				C313AF0227D8759F00C91A77 /* SceneDelegate.swift */,
-				C313AF0427D8759F00C91A77 /* ViewController.swift */,
 				C313AF0627D8759F00C91A77 /* Main.storyboard */,
 				C313AF0927D875A100C91A77 /* Assets.xcassets */,
 				C313AF0B27D875A100C91A77 /* LaunchScreen.storyboard */,
 				C313AF0E27D875A100C91A77 /* Info.plist */,
 			);
-			path = MyWordle;
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +166,9 @@
 				C313AF0527D8759F00C91A77 /* ViewController.swift in Sources */,
 				C313AF0127D8759F00C91A77 /* AppDelegate.swift in Sources */,
 				C313AF0327D8759F00C91A77 /* SceneDelegate.swift in Sources */,
+				C313AF1B27D8AB7200C91A77 /* KeyCell.swift in Sources */,
+				C313AF1727D876C600C91A77 /* KeyboardViewController.swift in Sources */,
+				C313AF1927D876D900C91A77 /* BoardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
