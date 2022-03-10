@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol BoardViewControllerDataSource: AnyObject {
+    var currentGuesses: [[Character?]] {get}
+    func boxColor(at indexPath: IndexPath) -> UIColor?
+}
+
 class BoardViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var guesses: [[Character?]] = Array(repeating: Array(repeating: nil, count: 5), count: 6)
     
-    let collectionView: UICollectionView = {
+    weak var dataSource: BoardViewControllerDataSource?
+    private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 4
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -32,22 +37,30 @@ class BoardViewController: UIViewController, UICollectionViewDelegateFlowLayout,
             collectionView.topAnchor.constraint(equalTo: view.topAnchor,constant: 30),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
     }
-    
+    func reloadData() {
+        collectionView.reloadData()
+    }
 }
 
 
 extension BoardViewController {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return guesses.count
+        return dataSource?.currentGuesses.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return guesses[section].count
+        return dataSource?.currentGuesses[section].count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KeyCell.identifier, for: indexPath) as? KeyCell else {fatalError()}
-        cell.backgroundColor = nil
+        cell.backgroundColor = dataSource?.boxColor(at: indexPath)
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.systemGray3.cgColor
+        
+        let guesses  = dataSource?.currentGuesses ?? []
+        if let letter = guesses[indexPath.section][indexPath.row] {
+            cell.configure(with: letter)
+        }
         return cell
     }
     
@@ -66,4 +79,4 @@ extension BoardViewController {
         //
     }
 }
- 
+
