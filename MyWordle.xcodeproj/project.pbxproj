@@ -64,34 +64,42 @@
 		C313AEFF27D8759F00C91A77 /* MyWordle */ = {
 			isa = PBXGroup;
 			children = (
-				C313AF1527D875C700C91A77 /* Other */,
-				C313AF1427D875B400C91A77 /* Core */,
+				C313AF0927D875A100C91A77 /* Assets.xcassets */,
+				C313AF0E27D875A100C91A77 /* Info.plist */,
+				C313AF0227D8759F00C91A77 /* SceneDelegate.swift */,
+				C313AF0027D8759F00C91A77 /* AppDelegate.swift */,
+				C313AF1427D875B400C91A77 /* Models */,
+				C35DF66627D9F41400B81E0C /* Views */,
+				C313AF1527D875C700C91A77 /* Controllers */,
 			);
 			path = MyWordle;
 			sourceTree = "<group>";
 		};
-		C313AF1427D875B400C91A77 /* Core */ = {
+		C313AF1427D875B400C91A77 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C313AF1A27D8AB7200C91A77 /* KeyCell.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C313AF1527D875C700C91A77 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				C313AF0427D8759F00C91A77 /* ViewController.swift */,
 				C313AF1627D876C600C91A77 /* KeyboardViewController.swift */,
 				C313AF1827D876D900C91A77 /* BoardViewController.swift */,
-				C313AF1A27D8AB7200C91A77 /* KeyCell.swift */,
 			);
-			path = Core;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		C313AF1527D875C700C91A77 /* Other */ = {
+		C35DF66627D9F41400B81E0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C313AF0027D8759F00C91A77 /* AppDelegate.swift */,
-				C313AF0227D8759F00C91A77 /* SceneDelegate.swift */,
 				C313AF0627D8759F00C91A77 /* Main.storyboard */,
-				C313AF0927D875A100C91A77 /* Assets.xcassets */,
 				C313AF0B27D875A100C91A77 /* LaunchScreen.storyboard */,
-				C313AF0E27D875A100C91A77 /* Info.plist */,
 			);
-			path = Other;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
