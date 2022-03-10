@@ -8,7 +8,7 @@
 import UIKit
 
 class KeyboardViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
     let letters = ["qwertyuiop", "asdfghjkl", "zxcvbnm"]
     private var keys: [[Character]] = []
     
@@ -26,11 +26,11 @@ class KeyboardViewController: UIViewController, UICollectionViewDelegateFlowLayo
         collectionView.delegate = self
         collectionView.dataSource = self
         view.addSubview(collectionView)
-        view.backgroundColor = .red
+        view.backgroundColor = .darkGray
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor,constant: 20),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
         
         for row in letters {
@@ -51,16 +51,18 @@ extension KeyboardViewController {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KeyCell.identifier, for: indexPath) as? KeyCell else {fatalError()}
+        let letter = keys[indexPath.section][indexPath.row]
+        cell.configure(with: letter)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-            let margin: CGFloat = 20
-            let size: CGFloat = (collectionView.frame.size.width-margin)/10
-
-            return CGSize(width: size, height: size*1.5)
-        }
+        
+        let margin: CGFloat = 20
+        let size: CGFloat = (collectionView.frame.size.width-margin)/10
+        
+        return CGSize(width: size, height: size*1.5)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         var left: CGFloat = 1
