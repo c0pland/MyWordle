@@ -16,6 +16,7 @@
 		C313AF1727D876C600C91A77 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313AF1627D876C600C91A77 /* KeyboardViewController.swift */; };
 		C313AF1927D876D900C91A77 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313AF1827D876D900C91A77 /* BoardViewController.swift */; };
 		C313AF1B27D8AB7200C91A77 /* KeyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313AF1A27D8AB7200C91A77 /* KeyCell.swift */; };
+		C35DF66527D9EB8A00B81E0C /* random-swift in Frameworks */ = {isa = PBXBuildFile; productRef = C35DF66427D9EB8A00B81E0C /* random-swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C35DF66527D9EB8A00B81E0C /* random-swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +110,9 @@
 			dependencies = (
 			);
 			name = MyWordle;
+			packageProductDependencies = (
+				C35DF66427D9EB8A00B81E0C /* random-swift */,
+			);
 			productName = MyWordle;
 			productReference = C313AEFD27D8759F00C91A77 /* MyWordle.app */;
 			productType = "com.apple.product-type.application";
@@ -136,6 +141,9 @@
 				Base,
 			);
 			mainGroup = C313AEF427D8759F00C91A77;
+			packageReferences = (
+				C35DF66327D9EB8A00B81E0C /* XCRemoteSwiftPackageReference "random-swift" */,
+			);
 			productRefGroup = C313AEFE27D8759F00C91A77 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -386,6 +394,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C35DF66327D9EB8A00B81E0C /* XCRemoteSwiftPackageReference "random-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GigabiteLabs/random-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C35DF66427D9EB8A00B81E0C /* random-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C35DF66327D9EB8A00B81E0C /* XCRemoteSwiftPackageReference "random-swift" */;
+			productName = "random-swift";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C313AEF527D8759F00C91A77 /* Project object */;
 }
